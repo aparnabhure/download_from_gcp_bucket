@@ -89,7 +89,7 @@ public class DownloadController {
         }
 
         //Parse the csv lines
-        String data = new String(decompressedBytes);
+        String data = new String(decompressedBytes, StandardCharsets.UTF_8);
         String[] lines = data.split("\n");
         List<Content> contentList = new ArrayList<>();
         for(int i=1; i< lines.length; i++){
